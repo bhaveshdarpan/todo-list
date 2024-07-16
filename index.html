@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>TO-DO LIST</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            background-color: #f3e8e8;
+        }
+        .todo-list{
+            display: flex;
+            flex: 1;
+            height: 100vh;
+            min-height: 200px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1{
+            font-size: 72px;
+            font-family: 'Poppins';
+            margin: 8px 8px 0px 0px;
+            position: relative;
+        }
+        p{
+            font-size: 24px;
+            font-family: 'Inter';
+            font-weight: semibold;
+            margin: 8px 0px 16px 0px;
+        }
+        input[type="text"]{
+            width: 414px;
+            height: 64px;
+            padding: 17px;
+            margin: 8px 8px 8px 16px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 32px;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            box-shadow: #bd2a2a;
+            font-family: 'Poppins';
+            font-size: medium;
+            font-weight: medium;
+            margin: 8px 8px 0px 0px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 32px;
+        }
+        .add-button{
+            background-color: #ffffff;
+            text-emphasis-color: rgb(161, 33, 33);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin: 8px 8px 0px 0px;
+            font-family: 'Poppins';
+            font-size: medium;
+            font-weight: regular;
+        }
+        .add-button:hover{
+            background-color: #0a5c35;
+            color: #ffffff;
+            font-weight: medium;
+        }
+        .task-list{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+            margin: 6vh 0px 0px 0px;
+            width: 33lh;
+
+        }
+        .task{
+            margin: 8px 8px 8px 8px;
+            display: flex;
+            flex-flow: row wrap;
+            font-family: 'Inter';
+            font-size: 16;
+            font-weight: medium;
+            width: 16em;
+            justify-content: space-around;
+            border-radius: 8px;
+            background-color: #febac2;
+        }
+        h4{
+            font-weight: 500;
+            font-size: 16px;
+        }
+        .delete-button{
+            padding: 0px 4px 0px 4px;
+            margin: 16px 0px 16px 0px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+        .delete-button:hover{
+            background-color: #bd2a2a;
+            color: #ffffff;
+            font-weight: medium;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="todo-list">
+            <h1>TO-DO LIST</h1>
+            <p>Get your to-do list here...</p>
+            <input type="text" placeholder="Write your pending task here..."><br>
+            <button class="add-button">Add to the list</button>
+            <div class="task-list">
+                <div class="task">
+                    <h4>First Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+                <div class="task">
+                    <h4>Second Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+                <div class="task">
+                    <h4>Third Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+                <div class="task">
+                    <h4>Fourth Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+                <div class="task">
+                    <h4>Fifth Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+                <div class="task">
+                    <h4>Sixth Task</h4>
+                    <button class="delete-button"><span class="material-icons">delete</span></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
