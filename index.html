@@ -124,6 +124,7 @@
                 }
                 function addTask(){
                     taskList.push(getValue());
+
                 }
                 // const input = document.getElementById('tasks-to-add');
                 // const button = document.getElementById('add-button');
@@ -153,6 +154,7 @@
                     deleteButton.addEventListener('click', deleteTask);
                     newTask.appendChild(deleteButton);
                     document.querySelector(".task-list").appendChild(newTask);
+                    document.getElementById("tasks-to-add").value = "";
                 }
                 function deleteTask(){
                     var li=this.parentElement;
@@ -161,7 +163,6 @@
             </script>
 
             <div class="task-list">
-
             </div>
         </div>
     </body>
