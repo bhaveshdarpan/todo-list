@@ -49,13 +49,18 @@
             border: 1px solid #cccccc;
             border-radius: 32px;
         }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0px 16px 0px;
+        }
         .add-button{
             background-color: #ffffff;
             text-emphasis-color: rgb(161, 33, 33);
             border: none;
             border-radius: 8px;
             padding: 8px 16px;
-            margin: 8px 8px 0px 0px;
+            margin: 8px 8px 0px 16px;
             font-family: 'Poppins';
             font-size: medium;
             font-weight: regular;
@@ -67,6 +72,27 @@
         }
         .add-button:click{
             background-color: #024323;
+            color: #ffffff;
+            font-weight: 300;
+        }
+        .reset-button{
+            background-color: #ffffff;
+            text-emphasis-color: rgb(161, 33, 33);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin: 8px 8px 0px 16px;
+            font-family: 'Poppins';
+            font-size: medium;
+            font-weight: regular;
+        }
+        .reset-button:hover{
+            background-color: #0e4173;
+            color: #ffffff;
+            font-weight: medium;
+        }
+        .reset-button:click{
+            background-color: #184567;
             color: #ffffff;
             font-weight: 300;
         }
@@ -115,7 +141,11 @@
             <h1>TO-DO LIST</h1>
             <p>Get your to-do list here...</p>
             <input type="text" placeholder="Write your pending task here..." id="tasks-to-add"><br>
-            <button class="add-button" id="add-task" onclick="addTask(); displayTaskList()">Add to the list</button>
+            <div class="buttons">
+                <button class="add-button" id="add-task" onclick="addTask(); displayTaskList()">Add to the list</button>
+                <button class="reset-button" id="reset-list" onclick="resetList()">Reset List</button>
+            </div>
+            
             <script>
                 const taskList = new Array();
                 function getValue() { 
@@ -126,7 +156,6 @@
                 }
                 function addTask(){
                     taskList.push(getValue());
-
                 }
                 // const input = document.getElementById('tasks-to-add');
                 // const button = document.getElementById('add-button');
@@ -155,7 +184,7 @@
                     deleteButton.innerHTML = '<span class="material-icons">delete</span>';
                     deleteButton.addEventListener('click', deleteTask);
                     newTask.appendChild(deleteButton);
-                    document.querySelector(".task-list").appendChild(newTask);
+                    document.querySelector(".task-list").prepend(newTask);
                     document.getElementById("tasks-to-add").value = "";
                 }
                 function deleteTask(){
