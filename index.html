@@ -24,9 +24,9 @@
             position: relative;
         }
         p{
-            font-size: 24px;
+            font-size: 20px;
             font-family: 'Inter';
-            font-weight: semibold;
+            font-weight: medium;
             margin: 8px 0px 16px 0px;
         }
         input[type="text"]{
@@ -60,9 +60,14 @@
             font-weight: regular;
         }
         .add-button:hover{
-            background-color: #0a5c35;
+            background-color: #208353;
             color: #ffffff;
             font-weight: medium;
+        }
+        .add-button:click{
+            background-color: #024323;
+            color: #ffffff;
+            font-weight: semibold;
         }
         .task-list{
             display: flex;
@@ -107,33 +112,56 @@
         <div class="todo-list">
             <h1>TO-DO LIST</h1>
             <p>Get your to-do list here...</p>
-            <input type="text" placeholder="Write your pending task here..."><br>
-            <button class="add-button">Add to the list</button>
+            <input type="text" placeholder="Write your pending task here..." id="tasks-to-add"><br>
+            <button class="add-button" id="add-task" onclick="addTask(); displayTaskList()">Add to the list</button>
+            <script>
+                const taskList = new Array();
+                function getValue() { 
+                    let inputField = document.getElementById("tasks-to-add");
+                    let value = inputField.value;
+                    console.log(value);
+                    return value;
+                }
+                function addTask(){
+                    taskList.push(getValue());
+                }
+                // const input = document.getElementById('tasks-to-add');
+                // const button = document.getElementById('add-button');
+
+                // button.addEventListener('click',
+                // fetch('https://jsonplaceholder.typicode.com/posts', {
+                // method: 'POST',
+                // body: JSON.stringify({
+                //     task: 'bhavesh',
+                // }),
+                // headers: {
+                //     'Content-type': 'application/json; charset=UTF-8',
+                // },
+                // })
+                // .then((response) => response.json())
+                // .then((json) => console.log(json)));
+
+                function displayTaskList(){
+                    let newTask = document.createElement("div");
+                    newTask.className = "task";
+                    let taskText = document.createElement("h4");
+                    taskText.innerText = getValue();
+                    newTask.appendChild(taskText);
+                    let deleteButton = document.createElement("button");
+                    deleteButton.className = "delete-button";
+                    deleteButton.innerHTML = '<span class="material-icons">delete</span>';
+                    deleteButton.addEventListener('click', deleteTask);
+                    newTask.appendChild(deleteButton);
+                    document.querySelector(".task-list").appendChild(newTask);
+                }
+                function deleteTask(){
+                    var li=this.parentElement;
+                    li.parentElement.removeChild(li);
+                }
+            </script>
+
             <div class="task-list">
-                <div class="task">
-                    <h4>First Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
-                <div class="task">
-                    <h4>Second Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
-                <div class="task">
-                    <h4>Third Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
-                <div class="task">
-                    <h4>Fourth Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
-                <div class="task">
-                    <h4>Fifth Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
-                <div class="task">
-                    <h4>Sixth Task</h4>
-                    <button class="delete-button"><span class="material-icons">delete</span></button>
-                </div>
+
             </div>
         </div>
     </body>
